@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://gazzardev-s-workspace-p0nunv.eu-central-1.xata.sh/db/snapcast",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
