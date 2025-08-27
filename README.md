@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Full Stack Screen Recording & Video Sharing Platform
 
-## Getting Started
+A modern, feature-rich screen recording and video sharing platform built with Next.js and Bunny.net. Record, upload, share, and manage your videos with AI-powered transcripts and enterprise-grade security.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🔐 Authentication & Security
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Secure Authentication**: Sign-up and sign-in with Better-Auth & Google OAuth
+- **Enterprise Security**: Arcjet integration for bot protection, rate limiting, and attack prevention
+- **Privacy Controls**: Toggle between public and private video settings
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📹 Video Management
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Screen Recording**: Capture your screen directly within the app
+- **Easy Uploads**: Intuitive video upload interface with drag-and-drop support
+- **AI Transcripts**: Automatically generated transcripts for accessibility and searchability
+- **Video Metadata**: Access video ID, URL, and other metadata for easy referencing
 
-## Learn More
+### 🚀 User Experience
 
-To learn more about Next.js, take a look at the following resources:
+- **Fast Search**: Built-in search functionality to find content quickly
+- **Easy Sharing**: Share videos via unique, secure links
+- **Responsive Design**: Works seamlessly across all devices
+- **Modern UI/UX**: Clean interface built with Tailwind CSS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🛠️ Developer Experience
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Type-Safe**: Built with TypeScript and Drizzle ORM for type safety
+- **Scalable Architecture**: Next.js framework for production-ready performance
+- **Real-time Database**: Xata integration for scalable data management
+- **Modular Codebase**: Reusable components and clean architecture
 
-## Deploy on Vercel
+## 🔧 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Technology       | Purpose        | Description                                          |
+| ---------------- | -------------- | ---------------------------------------------------- |
+| **Next.js**      | Framework      | React framework with SSR, SSG, and API routes        |
+| **TypeScript**   | Language       | Static typing for better code quality and tooling    |
+| **Bunny.net**    | Video Platform | Global CDN, adaptive streaming, and video management |
+| **Better Auth**  | Authentication | TypeScript-first auth with 2FA and social sign-ins   |
+| **Arcjet**       | Security       | Bot protection, rate limiting, and attack prevention |
+| **Drizzle ORM**  | Database       | Type-safe, lightweight ORM for SQL databases         |
+| **Xata**         | Database       | Serverless PostgreSQL with auto-scaling              |
+| **Tailwind CSS** | Styling        | Utility-first CSS framework                          |
