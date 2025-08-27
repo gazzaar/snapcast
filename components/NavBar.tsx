@@ -1,42 +1,58 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
-const user = {};
-const NavBar = () => {
+import { authClient } from '@/lib/auth-client';
+import ImageWithFallback from './ImageWithFallback';
+// import ImageWithFallback from './ImageWithFallback';
+const Navbar = () => {
   const router = useRouter();
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+
   return (
-    <header className="navbar">
+    <header className='navbar'>
       <nav>
-        <Link href={'/'}>
+        <Link href='/'>
           <Image
-            src="/assets/icons/logo.svg"
-            alt="logo"
+            src='/assets/icons/logo.svg'
+            alt='SnapChat Logo'
             width={32}
             height={32}
           />
           <h1>SnapCast</h1>
         </Link>
+
         {user && (
           <figure>
-            <button onClick={() => router.push('/profile/12345')}>
-              <Image
-                src="/assets/images/dummy.jpg"
-                alt="user"
+            <button onClick={() => router.push(`/profile/${session?.user.id}`)}>
+              <ImageWithFallback
+                src={session?.user.image ?? ''}
+                alt='User'
                 width={36}
                 height={36}
-                className="rounded-full aspect-square"
+                className='rounded-full aspect-square'
               />
             </button>
-
-            <button>
+            <button
+              onClick={async () => {
+                return await authClient.signOut({
+                  fetchOptions: {
+                    onSuccess: () => {
+                      redirect('/sign-in');
+                    },
+                  },
+                });
+              }}
+              className='cursor-pointer'
+            >
               <Image
-                src="assets/icons/logout.svg"
-                alt="logout"
+                src='/assets/icons/logout.svg'
+                alt='logout'
                 width={24}
                 height={24}
-                className="rotate-180"
+                className='rotate-180'
               />
             </button>
           </figure>
@@ -46,4 +62,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;

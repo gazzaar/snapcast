@@ -1,19 +1,19 @@
 import { ICONS } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
-import DropDownList from './DropDownList';
+import DropdownList from './DropdownList';
 const Header = ({ subHeader, title, userImg }: SharedHeaderProps) => {
   return (
-    <header className="header">
-      <section className="header-container">
-        <div className="details">
+    <header className='header'>
+      <section className='header-container'>
+        <div className='details'>
           {userImg && (
             <Image
               src={userImg || '/assets/images/dummy.jpg'}
-              alt="user"
-              width="66"
-              height="66"
-              className="rounded-full"
+              alt='user'
+              width='66'
+              height='66'
+              className='rounded-full'
             />
           )}
           <article>
@@ -22,38 +22,38 @@ const Header = ({ subHeader, title, userImg }: SharedHeaderProps) => {
           </article>
         </div>
         <aside>
-          <Link href="/upload">
+          <Link href='/upload'>
             <Image
-              src="/assets/icons/upload.svg"
-              alt="upload"
+              src='/assets/icons/upload.svg'
+              alt='upload'
               width={16}
               height={16}
             />{' '}
             <span>Upload video</span>
           </Link>
-          <div className="record">
-            <button className="primary-btn">
-              <Image src={ICONS.record} alt="record" width={16} height={16} />
+          <div className='record'>
+            <button className='primary-btn'>
+              <Image src={ICONS.record} alt='record' width={16} height={16} />
 
-              <span className="truncate">Record a video</span>
+              <span className='truncate'>Record a video</span>
             </button>
           </div>
         </aside>
       </section>
-      <section className="search-filter">
-        <div className="search">
+      <section className='search-filter'>
+        <div className='search'>
           <input
-            type="text"
-            placeholder="Search for videos, tags, folders..."
+            type='text'
+            placeholder='Search for videos, tags, folders...'
           />
           <Image
-            src="/assets/icons/search.svg"
-            alt="search"
+            src='/assets/icons/search.svg'
+            alt='search'
             width={16}
             height={16}
           />
         </div>
-        <DropDownList />
+        <DropdownList />
       </section>
     </header>
   );
